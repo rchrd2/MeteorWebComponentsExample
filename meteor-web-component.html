@@ -1,5 +1,7 @@
 <head>
   <title>meteor-web-component</title>
+  <script src="webcomponentsjs/webcomponents.min.js"></script>
+
   <link rel="import" href="hello-world.html">
 
 </head>
@@ -11,7 +13,7 @@
 </body>
 
 <template name="hello">
-  <button>Click Me</button>
+  <button id="clicker">Click Me</button>
   <p>You've pressed the button {{counter}} times.</p>
 
   <!-- Use web component defined in the client js -->
@@ -22,5 +24,8 @@
 
   <!-- Use Meteor Template binding with a web component -->
   <hello-world who="{{counter}}"></hello-world>
+
+  <textarea id="input">{{username}}</textarea>
+  <my-avatar service="twitter" username="{{username}}"></my-avatar>
 
 </template>

@@ -22,21 +22,31 @@ if (Meteor.isClient) {
 
   // counter starts at 0
   Session.setDefault('counter', 0);
+  Session.setDefault('username', 'rchrd2');
+
 
   Template.hello.helpers({
     counter: function () {
       return Session.get('counter');
     },
     username: function () {
-      return Session.get('username') || 'rchrd2';
+      return Session.get('username');
     }
   });
 
   Template.hello.events({
-    'click button': function () {
+    'click #clicker': function () {
       // increment the counter when button is clicked
       Session.set('counter', Session.get('counter') + 1);
-    }
+    },
+    'input #input': function (e, obj) {
+      console.log(e.currentTarget.value);
+      Session.set('username', e.currentTarget.value);
+    },
+    "input textarea": function (e, template) {
+      console.log(e.currentTarget.value);
+      Session.set('username', e.currentTarget.value);
+    },
   });
 }
 
