@@ -1,0 +1,20 @@
+<head>
+  <title>meteor-web-component</title>
+  <link rel="import" href="hello-world.html">
+
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{> hello}}
+</body>
+
+<template name="hello">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+  <my-avatar service="twitter" username="rchrd2"></my-avatar>
+  <hello-world who="meteor!">Richard</hello-world>
+  <hello-world who="{{counter}}">Richard</hello-world>
+
+</template>
