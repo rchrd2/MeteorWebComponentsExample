@@ -13,8 +13,14 @@
 <template name="hello">
   <button>Click Me</button>
   <p>You've pressed the button {{counter}} times.</p>
+
+  <!-- Use web component defined in the client js -->
   <my-avatar service="twitter" username="rchrd2"></my-avatar>
-  <hello-world who="meteor!">Richard</hello-world>
-  <hello-world who="{{counter}}">Richard</hello-world>
+
+  <!-- Use web component loaded with rel="import" -->
+  <hello-world who="meteor!"></hello-world>
+
+  <!-- Use Meteor Template binding with a web component -->
+  <hello-world who="{{counter}}"></hello-world>
 
 </template>

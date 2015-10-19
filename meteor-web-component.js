@@ -1,10 +1,10 @@
 if (Meteor.isClient) {
   Meteor.startup(function () {
-    // code to run on server at startup
+    /**
+     * This shows how simple it is to create a webcomponent
+     */
     var MyAvatarPrototype = Object.create(HTMLElement.prototype);
-
     MyAvatarPrototype.createdCallback = function () {
-        window.THIS2 = this;
         var username = this.getAttribute('username');
         console.log(username);
         var service = this.getAttribute('service');
